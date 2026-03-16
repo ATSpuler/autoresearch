@@ -71,7 +71,7 @@ class CausalSelfAttention(nn.Module):
         self.c_k = nn.Linear(self.n_embd, self.n_kv_head * self.head_dim, bias=False)
         self.c_v = nn.Linear(self.n_embd, self.n_kv_head * self.head_dim, bias=False)
         self.c_proj = nn.Linear(self.n_embd, self.n_embd, bias=False)
-        self.ve_gate_channels = 32
+        self.ve_gate_channels = 16
         self.ve_gate = nn.Linear(self.ve_gate_channels, self.n_kv_head, bias=False) if has_ve(layer_idx, config.n_layer) else None
 
     def forward(self, x, ve, cos_sin, window_size):
@@ -528,7 +528,7 @@ def get_lr_multiplier(progress):
 
 def get_muon_momentum(step):
     frac = min(step / 300, 1)
-    return (1 - frac) * 0.85 + frac * 0.95
+    return (1 - frac) * 0.85 + frac * 0.90
 
 def get_weight_decay(progress):
     return WEIGHT_DECAY * (1 - progress)
