@@ -98,7 +98,7 @@ class CausalSelfAttention(nn.Module):
         return y
 
 
-MLP_RATIO = 2
+MLP_RATIO = 1
 
 class MLP(nn.Module):
     def __init__(self, config):
