@@ -1,3 +1,12 @@
+## Fork Results
+
+**156 experiments on a single RTX 3060 12 GB** — val_bpb improved from **1.3145 → 1.1460** (12.8%) while reducing parameters from 50M to 36M and VRAM from 6.0 to 4.1 GB.
+
+Full writeup: [docs/writeup.md](docs/writeup.md) | Raw data: [docs/results_mar12.tsv](docs/results_mar12.tsv)
+Experiment branches: [`autoresearch/mar12`](https://github.com/ATSpuler/autoresearch/tree/autoresearch/mar12) (exp 1–42), [`autoresearch/mar15`](https://github.com/ATSpuler/autoresearch/tree/autoresearch/mar15) (exp 43–156)
+
+---
+
 # autoresearch
 
 ![teaser](progress.png)
